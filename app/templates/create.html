@@ -36,23 +36,4 @@
 {% endwith %}
 </div>
 <button id="logout" onclick="document.location='/logout'">Log Out</button>
-   
-
-    <table>
-        <thead>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Code</th>
-        </thead>
-        {% for room in rooms %}
-        <tbody>
-            <td>
-                {{room.id}}
-            </td>
-            <td>{{room.name}}</td>
-            <td>{{room.code}}</td>
-            <td><a href="/delete/{{room.id}}" type="button">Delete</a></td>
-        </tbody>
-        {% endfor %}
-    </table>
 {% endblock %}
