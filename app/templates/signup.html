@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{%block title%}
+    Sign Up
+{% endblock %}
+
+{%block body %}
+
+<div class="form">
+    <form action="/signup", method="post" autocomplete="off">
+        <h2>Sign Up</h2>
+        {{form.csrf_token}}
+        <p>
+            {{form.name.label}}
+            <br>
+            {{form.name}}
+        </p>
+        <p>
+            {{form.password.label}}
+            <br>
+            {{form.password}}
+        </p>
+        <p>
+            {{form.confirm_password.label}}
+            <br>
+            {{form.confirm_password}}
+        </p>
+        <p>
+            {{form.signup}}
+        </p>
+    </form>
+</div>
+<button  id="home_page" type="button" onclick="document.location='/'">Home Page</button>
+{% endblock %}

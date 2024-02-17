@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}
+    Room
+{% endblock %}
+
+{% block body %}
+    <h1 id="titleroom">Chat Room</h1>
+    <div id="messageContainer"></div>
+    <div id="messages">
+
+    </div>
+    <form id="messageForm" class="message-form">
+        <input type="text" id="messageInput" placeholder="Enter message" autocomplete="off" class="message-input">
+        <button type="submit" id="send">Send</button>
+    </form>
+    <button type="button" onclick="document.location='/join'" id="leave">Leave Room</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
+<script>
+    const socket = io();
+
+    function sendMessage(event) {
+        event.preventDefault();
+        var messageInput = document.getElementById('messageInput');
+        var message = messageInput.value.trim();
+        if (message !== '') {
+            socket.emit('message', { name: "{{ current_user.name }}", message: message });
+            messageInput.value = '';
+        }
+    }
+
+    document.getElementById('messageForm').addEventListener('submit', sendMessage);
+
+    function handleMessage(data) {
+        var messages = document.getElementById('messages');
+        var p = document.createElement('p');
+        p.style.color = data.color;
+
+        p.textContent = `${data.name}: ${data.message}`;
+        messages.appendChild(p);
+    }
+    
+    socket.on('message', handleMessage);
+</script>
+
+{% endblock %}
+

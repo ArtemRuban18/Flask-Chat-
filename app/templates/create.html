@@ -1,0 +1,58 @@
+{%extends 'base.html'%}
+
+{% block title %}
+    Live Chat
+{% endblock %}
+
+{% block body %}
+<div class="form">
+    <h1>Create Room</h1>
+    <form action="/create" method="post", autocomplete="off">
+        {{form.csrf_token}}
+        <p>
+            {{form.name.label}}
+            <br>
+            {{form.name}}
+        </p>
+        <p>
+            {{form.code.label}}
+            <br>
+            {{form.code}}
+        </p>
+        {{form.create_room}}
+    </form>
+    <form action="/join" method="post" autocomplete="off">
+        {{form.csrf_token}}
+        {{form.join_room}}
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="flash-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+</div>
+<button id="logout" onclick="document.location='/logout'">Log Out</button>
+   
+
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Code</th>
+        </thead>
+        {% for room in rooms %}
+        <tbody>
+            <td>
+                {{room.id}}
+            </td>
+            <td>{{room.name}}</td>
+            <td>{{room.code}}</td>
+            <td><a href="/delete/{{room.id}}" type="button">Delete</a></td>
+        </tbody>
+        {% endfor %}
+    </table>
+{% endblock %}

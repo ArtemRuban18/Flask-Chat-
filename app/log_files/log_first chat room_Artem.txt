@@ -1,0 +1,3 @@
+[08:44:13]: Sender:Artem: Log file created
+[08:44:16]: Sender:Artem: Hello
+[08:44:28]: Sender:Artem: This is live chat

@@ -1,0 +1,136 @@
+div{
+    width: 200px;
+    height: auto;
+}
+
+#indexText{
+    font-family: cursive;
+    text-align: center;
+    margin-top: 170px;
+    margin-bottom: 30px;
+    color:  rgb(13, 77, 151);
+}
+
+.index{
+    width: 600px;
+    height: 500px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: 430px;
+    line-height: 42px;
+}
+
+.buttons{
+    width: 300px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 10px;
+    background-color:whitesmoke;
+    border-color:  rgb(13, 77, 151);
+    font-family: cursive;
+    font-size: larger;
+}
+
+.form {
+    width: 300px;
+    margin: 0 auto; 
+    padding: 20px; 
+    border: 1px solid  black; 
+    border-radius: 5px;
+    margin-top: 100px;
+}
+
+#create_room, #join_room, #signin, #signup{
+    background-color: rgb(13, 77, 151);
+    border-radius: 10px;
+    border-color: rgb(13, 77, 151);
+    margin-left: 65px;
+    margin-bottom: 10px;
+    width: 120px;
+    height: 30px;
+    color: white;
+}
+
+#home_page, #logout{
+    background-color: rgb(13, 77, 151);
+    border-radius: 10px;
+    border-color: rgb(13, 77, 151);
+    margin-left: 65px;
+    margin-bottom: 10px;
+    width: 270px;
+    height: 30px;
+    margin-left: 630px;
+    margin-top: 20px;
+    color: white;
+}
+
+#name, #code, #password, #confirm_password{
+    width: 250px;
+}
+
+.message-form {
+    margin-bottom: 20px;
+}
+
+.message-input {
+    width: 300px;
+    margin-right: 10px;
+}
+
+#messages{
+    width: 1100px;
+    height: 500px;
+    margin-left: 400px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+    max-height: 300;
+    overflow-y: auto;
+    max-width: 600px;
+    overflow-x: auto;
+}
+
+#titleroom{
+    margin-left: 650px;
+    color:  rgb(13, 77, 151);
+}
+
+#messageInput{
+    margin-left: 400px;
+    width: 600px;
+}
+
+#send{
+    background-color: rgb(13, 77, 151);
+    border-radius: 10px;
+    border-color: rgb(13, 77, 151);
+    margin-bottom: 10px;
+    width: 80px;
+    height: 30px;
+    color: white;
+}
+
+#leave{
+    background-color: rgb(13, 77, 151);
+    border-radius: 10px;
+    border-color: rgb(13, 77, 151);
+    margin-left: 65px;
+    margin-bottom: 10px;
+    width: 270px;
+    height: 30px;
+    margin-left: 630px;
+    color: white;
+}
+
+.flash-warning{
+    text-align: center;
+    color: red;
+    margin-left: 20px;
+}
+
+
+
