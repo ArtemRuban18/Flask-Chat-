@@ -33,13 +33,11 @@ def connect(data):
     username = session.get('username', 'name')
     emit('color_update', {'color': session['color']})
     emit('message', {'name': username, 'message': 'User connected'}, broadcast=True)
-    print("Connect")
 
 @socketio.on('disconnect')
 def disconnect():
     username = session.get('username', 'name')
     emit('message',{'name': username, 'message':'User disconnected'}, broadcast=True)
-    print("Disconnect")
 
 @socketio.on('message')
 def handle_message(data):

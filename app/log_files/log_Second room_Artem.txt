@@ -1,2 +1,0 @@
-[08:44:59]: Sender:Artem: Log file created
-[08:45:10]: Sender:Artem: This is second chat room

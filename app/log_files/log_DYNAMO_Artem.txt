@@ -1,0 +1,4 @@
+[21:28:08]: Sender:Artem: Log file created
+[21:28:18]: Sender:Artem: HELLO
+[21:28:46]: Sender:Artem: I`M ARTEM
+[21:28:55]: Sender:Artem: AND YOU?

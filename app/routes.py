@@ -39,7 +39,7 @@ def create():
             new_room = ChatRoom(name = room_name, code = room_code)
             db.session.add(new_room)
             db.session.commit()
-            session['current_room_name'] = room_name  # Set current room name in session
+            session['current_room_name'] = room_name
             logFileForRooms(new_room.id, new_room.name, current_user.name, "Log file created")
             return redirect(url_for('room', room_id=new_room.id, room_name=new_room.name))
     return render_template("create.html", form=form, rooms=rooms, users=users, current_user=current_user)
@@ -109,13 +109,5 @@ def logout():
      return render_template('index.html')
 
 
-@app.route('/delete/<int:id>', methods=['GET', 'POST'])
-@login_required
-def delete_room(id):
-    room = ChatRoom.query.get(id)
-    if room:
-        db.session.delete(room)
-        db.session.commit()
-    return redirect(url_for('create'))
 
 
